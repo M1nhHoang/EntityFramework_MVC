@@ -35,7 +35,7 @@ namespace EntityFramework_MVC.Controllers
 
             var nhanVien = await _context.NhanViens
                 .Include(n => n.IdNvNavigation)
-                .FirstOrDefaultAsync(m => m.IdNv_145 == id);
+                .FirstOrDefaultAsync(m => m.MaNv_145 == id);
             if (nhanVien == null)
             {
                 return NotFound();
@@ -92,7 +92,7 @@ namespace EntityFramework_MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdNv_145,MaNv_145,TenNv_145,NgaySinh_145,GioiTinh_145,NgayVaoCoQuan_145,SoCmnd_145,HeSoLuong_145")] NhanVien nhanVien)
         {
-            if (id != nhanVien.IdNv_145)
+            if (id != nhanVien.MaNv_145)
             {
                 return NotFound();
             }
@@ -131,7 +131,7 @@ namespace EntityFramework_MVC.Controllers
 
             var nhanVien = await _context.NhanViens
                 .Include(n => n.IdNvNavigation)
-                .FirstOrDefaultAsync(m => m.IdNv_145 == id);
+                .FirstOrDefaultAsync(m => m.MaNv_145 == id);
             if (nhanVien == null)
             {
                 return NotFound();
@@ -153,7 +153,7 @@ namespace EntityFramework_MVC.Controllers
 
         private bool NhanVienExists(int id)
         {
-            return _context.NhanViens.Any(e => e.IdNv_145 == id);
+            return _context.NhanViens.Any(e => e.MaNv_145 == id);
         }
     }
 }

@@ -24,7 +24,6 @@ namespace EntityFramework_MVC.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=LAPTOP-G9HMKMUF;Initial Catalog=QuanLiNhanVien;Integrated Security=True");
             }
         }
@@ -50,7 +49,7 @@ namespace EntityFramework_MVC.Models
 
             modelBuilder.Entity<NhanVien>(entity =>
             {
-                entity.HasKey(e => new { e.IdNv_145, e.MaNv_145 })
+                entity.HasKey(e => new { e.MaNv_145 })
                     .HasName("PK__nhanVien__DA1B95036BC5C7B0");
 
                 entity.ToTable("nhanVien");
